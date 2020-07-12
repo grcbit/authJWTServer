@@ -1,21 +1,4 @@
 # -*- coding: utf-8 -*-
-# -------------------------------------------------------------------------
-# This is a sample controller
-# this file is released under public domain and you can use without limitations
-# -------------------------------------------------------------------------
-
-@auth.requires_login()
-def index():
-    session.forget()
-    response.flash = T("Hello World")
-    return dict(message=T('Welcome to web2py!'))
-
-# ---- API (example) -----
-@auth.requires_login()
-def api_get_user_email():
-    session.forget()
-    if not request.env.request_method == 'GET': raise HTTP(403)
-    return response.json({'status':'ok', 'email':auth.user.email})
 
 @auth.requires_login()
 def api_get_jwt():
